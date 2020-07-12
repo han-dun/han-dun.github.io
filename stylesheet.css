@@ -1,0 +1,217 @@
+body{
+    font-family: arial,sans-serif;
+}
+#search_svg{
+    display: flex;
+    padding-right: 13px;
+    margin-top: -5px;
+    height: 20px;
+    width: 20px;
+}
+.logo{
+    padding-top: 109px;
+}
+#logo_pic{
+    display:block;
+    width:272px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#logo_bg{
+    background:url(googlelogo_color_272x92dp.png) no-repeat;
+    background-size: 272px 92px;
+    height: 92px;
+    width:272px;
+    margin: 0 auto;
+}
+.logo-subtext{
+    
+    display: block;
+    color: #4285f4;
+    font-size: 16px;
+    left:215px;
+    position: relative;
+    top:76px;
+    white-space: nowrap;
+}
+#text_box{
+    flex: 1;
+    display: flex;
+    padding: 5px 8px 0 16px;
+    padding-left: 14px;
+    background:#fff;
+    border:1px solid #dfe1e5;
+    box-shadow:none;
+    border-radius:24px;
+    z-index:3;
+    height:44px;
+    margin:0 auto;
+    width:482px;
+}
+.submit_btn{
+    display:flex;
+    justify-content: center;
+}
+#normal_sb_btn{
+    display: inline-block;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5f6368;
+    font-size: 14px;
+    margin: 11px 11px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    z-index: 0;
+}
+.menu{
+    display: flex;
+    flex-direction: row-reverse;
+}
+a{
+    display: block;
+    margin:5px;
+}
+
+.appbar{
+    margin-left:10px;
+    color:#d93025;
+    font-size: 20px;
+    margin: 25px 35px;
+    vertical-align: baseline;
+}
+.appbar_line{
+    border-bottom: 1px solid #ebebeb;
+    vertical-align: baseline;
+}
+.search_area{
+    max-width:1440px;
+    min-width:200px;
+    width:96%;
+    margin: 40px 2% 0 45px;
+}
+.search_item_title{
+    display: inline-block;
+    min-width: 167px;
+    font-size: 16px;
+    width: 16%;
+    height:36px;
+    display:table-cell;
+    vertical-align: middle;
+    font-weight: 500;
+    color:#333
+}
+.navbar{
+    background: #f1f1f1;
+    white-space: nowrap;
+}
+.google_logo_home{
+    background-position: 0 -35px;
+    height: 33px;
+    width: 92px;
+    background-image: url(google_navbar.png);
+    background-size: 528px 68px;
+    cursor: pointer;
+    margin:20px 0;
+}
+
+.item_row{
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.search_item_box{
+    text-align: left;
+    padding: 1px 8px;
+    border-radius: 1px;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+    font-size: 13px;
+    width:98%;
+    height: 25px;
+}
+
+.search_comment{
+    display:table-cell;
+    height: 30px;
+    vertical-align: middle;
+    color: #555;
+    font-size: 11px;
+    font-weight: 500;
+}
+.search_example{
+    color: #666;
+    font-family: monospace;
+    font-size: 11px;
+    white-space: pre;
+}
+.item_block{
+    display: inline-block;
+    min-width: 167px;
+    width: 33%;
+    height: 42px;
+    font-weight: 500;
+    color: #333;
+    vertical-align: middle;
+}
+
+.search_item_block{
+    display: inline-block;
+    min-width: 167px;
+    width:16%;
+    color: #333;
+    height: 42px;
+    font-size: 16px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+.item_comment_block{
+    display: inline-block;
+    width:30%;
+    color: #777;
+    font-size: 13px;
+    font-weight: 700;
+    vertical-align: middle;
+    padding-left:5px;
+    margin: 0 0 8px 1%;
+}
+.search_item_title{
+    height: 30px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.search_item_text{
+    font-size: 13px;
+}
+.item_space{
+    display: inline-block;
+    min-width: 167px;
+    min-height: 41px;
+    vertical-align: middle;
+    width: 50%;
+}
+
+#advance_sb_btn{
+    display: inline-block;
+    box-shadow: none;
+    background-color: #4d90fe;
+    background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
+    border: 1px solid #3079ed;
+    color: #fff;
+    height: 30px;
+    line-height: 100%;
+    border-radius: 2px;
+    font-size: 11px;
+    text-align: center;
+    white-space: nowrap;
+    font:400 13.3333px Arial;
+    padding: 0 12px;
+    margin: 10px 0;
+    text-align: right;
+}

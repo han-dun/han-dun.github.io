@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="stylesheet.css">
+
+<head>
+    <title>Search</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html" class="google_logo_home" aria-label="Google" title="Go to Google Home"></a>
+    </div>
+    <div class="appbar">
+        <label>Advance Search</label>
+    </div>
+    <div class="appbar_line"></div>
+    <div class="search_area">
+        <form action="https://www.google.com/search" method="GET" name="f">
+            <div class="item_row">
+                <div class="search_item_block">
+                    <div class="search_item_title">
+                        <span>Find pages with...</span>
+                    </div>
+                </div>
+                <div class="item_space">&nbsp;</div>
+                <div class="item_comment_block">
+                    <div class="search_item_title">
+                        To do this in the search box.
+                    </div>
+                </div>
+            </div>
+            <div class="item_row">
+                <div class="search_item_block">
+                    <label class="search_item_text" for="words">all these words:</label>
+                </div>
+                <div class="item_space">
+                    <input class="search_item_box" type="text" value autofocus="autofocus" id="words" name="as_q" />
+                </div>
+                <div class="item_comment_block">
+                    <div class="search_comment">
+                        Type the import words:
+                        <span class="search_example">tri-colour rat terrier</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item_row">
+                <div class="search_item_block">
+                    <label class="search_item_text" for="exact_word">this exact word or phase:</label>
+                </div>
+                <div class="item_space">
+                    <input class="search_item_box" type="text" value id="exact_word" name="as_epq" />
+                </div>
+                <div class="item_comment_block">
+                    <div class="search_comment">
+                        Put exact words in quotes:
+                        <span class="search_example">"rat terrier"</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item_row">
+                <div class="search_item_block">
+                    <label class="search_item_text" for="any_word">any of these word:</label>
+                </div>
+                <div class="item_space">
+                    <input class="search_item_box" type="text" value id="any_word" name="as_oq" />
+                </div>
+                <div class="item_comment_block">
+                    <div class="search_comment">
+                        Type OR between all the words thay want:
+                        <span class="search_example">miniature OR standard</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item_row">
+                <div class="search_item_block">
+                    <label class="search_item_text" for="none_word">none of these words:</label>
+                </div>
+                <div class="item_space">
+                    <input class="search_item_box" type="text" value id="none_word" name="as_eq" />
+                </div>
+                <div class="item_comment_block">
+                    <div class="search_comment">
+                        Put a minus sign just before words that you don't want:
+                        <span class="search_example">-rodent, -"Jack Russell"</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="item_row">
+                <div class="search_item_block"></div>
+                <div class="item_space" style="text-align: right">
+                    <input type="hidden" name="tbs" value>
+                    <input id="advance_sb_btn" type="submit" value="Advance Search">
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
