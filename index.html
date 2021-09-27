@@ -1,32 +1,558 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="stylesheet.css">
 
 <head>
-    <title>Search</title>
+	<meta charset="utf-8">
+
+	<title>Han Dun TU Delft</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+	 crossorigin="anonymous">-->
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/sky.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	<link rel="stylesheet" href="dist/bootstrap.css">
+
 </head>
 
 <body>
-    <div class="menu">
-        <a href="advance_search.html">Google Advanced Search </a>
-        <a href="imag_search.html">Google Image Search </a>
-    </div>
-    <div class="logo">
-        <img id="logo_pic" src="googlelogo_color_272x92dp.png">
-    </div>
-    <!--<div id="search_svg">
-        <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-        </svg>
-    </div>-->
-    <form action="https://google.com/search">
-        <input id="text_box" type="text" name="q">
-        <div class="submit_btn">
-            <input id="normal_sb_btn" type="submit" value="Google Search">
-            <input id="normal_sb_btn" name="btnI" type="submit" value="I'm Feeling Lucky">
-        </div>
-    </form>
+
+	<div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<a href="https://www.tudelft.nl/citg/over-faculteit/afdelingen/geoscience-remote-sensing/research/projects/supergps/">
+					<img src="./images/TU_P1_full-color.png" alt="reveal.js logo" style="height: 180px; margin: 0 auto 0.1rem auto; background: transparent;"
+					 class="demo-logo">
+				</a>
+				<h3 style="padding-bottom: 0.5rem">High Accuracy Terrestrial Positioning Based on Time Delay and Carrier Phase Using Wideband Radio Signals
+				</h3>
+				<hr>
+				<h4>
+					Han Dun, doctoral defense: 4 October, 2021
+				</h4>
+			</section>
+
+			<section>
+				<p>GNSS can provide accurate position solution in open area...</p>
+				<p>
+					<span class="fragment">However, </span>
+					<span class="fragment">its positioning accuracy becomes
+						<strong>poor</strong> in urban environment,</span>
+				</p>
+				<p class="fragment">where accurate position is most needed.</p>
+			</section>
+			<section>
+				A terrestrial position system can be a local alternative for precise positioning to existing GNSS
+			</section>
+
+			<section>
+				<h4>Requirements for a typical terrestrial positioning system</h4>
+				<ul>
+					<li class="fragment">
+						<h4>radio transmitters should be
+							<strong>synchronized </strong> in time and frequency</h4>
+					</li>
+					<li class="fragment">
+						<h4>
+							<strong>transmitter position</strong> should be measured a priori</h4>
+					</li>
+					<li class="fragment">
+						<h4>
+							<strong>sub-meter</strong> positioning accuracy is required
+							<h4>
+					</li>
+					<li class="fragment">
+						<h4>
+							large (virtual)
+							<strong>signal bandwidth</strong> is needed to improve the resolvability of different paths and overcome multipath effects</h4>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				Thus, 'SuperGPS' system is proposed, and can meet the requirements.
+			</section>
+
+			<section>
+				<h4>SuperGPS: accurate timing and positioning through an optical-wireless distributed time and frequency reference</h4>
+				<img src="./images/supergps_system.png" alt="reveal.js logo" style="height: 280px; margin: 0 auto 0.5rem auto; background: transparent;">
+				<h5>Blue line: existing optical communication infrastructure, green square: radio transmitters, red square: central atomic
+					clock
+				</h5>
+				<hr>
+				<h4 class="fragment">The work presented in this thesis is carrierd out in the context of 'SuperGPS' project
+				</h4>
+			</section>
+
+			<section data-transition="slide-in">
+				<h4>This thesis covers the following aspects:</h4>
+				<ul>
+					<li class="fragment">
+						<h4>How can a ranging signal be designed by occupying little sprectral resources, but provides high ranging accuracy?</h4>
+					</li>
+					<li class="fragment">
+						<h4>how can carrier phase be estimated from periodically transmitted ranging signal from an asynchronized receiver?</h4>
+					</li>
+					<li class="fragment">
+						<h4>How can integer nature of carrier phase cycle ambiguities be retrieved, so that the ambiguity-fixed solution can be
+							obtained.
+						</h4>
+					</li>
+					<li class="fragment">
+						<h4>what is the positioning accuraccy that prototype system can provide?</h4>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<div style="padding-bottom: 0.5rem;">Signal bandwidth and ranging accuracy</div>
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<img src="images/multipath_error.png" style="height: 280px; margin: 0 auto 0.5rem auto; background: transparent;">
+						</div>
+						<div class="col">
+							<img src="images/CRLB_versus_bandwidth_snr.png" style="height: 280px; margin: 0 auto 0.5rem auto; background: transparent;"
+							 alt="">
+						</div>
+					</div>
+					<h5> ranging precision is justified by Cramer-Rao lower bound (CRLB)</h5>
+					<h4 class="fragment">large signal bandwidth = high ranging accuracy</h4>
+				</div>
+			</section>
+
+			<section>
+				Signal bandwidth and ranging precision
+				<img src="images/crlb_virutal_signal_bandwidth.png" style="height: 380px; margin: 0 auto 0.5rem auto; background: transparent;">
+				<h5>
+					<strong>virtual</strong> signal bandwidth: bandwidth between two signal bands at the edges.</h5>
+				<h4 class="fragment">large
+					<strong> virtual </strong> signal bandwidth = high ranging precision</h4>
+			</section>
+			<section></section>
+			<section>
+				<div>Carrier phase tracking </div>
+				<div class="row" style="padding-top: 1rem">
+					<div class="col">
+						<img src="images/CFO_aided_PLL.png" style="height: 250px; margin: 0 auto 0.5rem auto; background: transparent;">
+						<h5 style="text-align: left">$x_1$: complex propagation gain of Line-of-Sight (LoS)</h5>
+						<h5 style="text-align: left">$\Delta\check{f}_c(t)$: carrier frequency offset estimate, which can be obtained via Moose's symbol, time-delay-based
+							positioning model (i.e., clock offset)</h5>
+					</div>
+					<div class="col">
+						<h5>
+							<strong>Example</strong>: unwrapped carrier phase (red line), in which only initial carrier phase ambiguit is preserved</h5>
+						<img src="images/unwrapped_Carrier_Phase.png" style="height: 280px; margin: 0 auto 0.5rem auto; background: transparent;">
+					</div>
+				</div>
+			</section>
+
+			<section>
+				Carrier phase cycle ambiguity
+				<ul>
+					<li>single snapshot measurements set taken from all transmitters</li>
+					<li>not need to be updated in real-time, unless the transmitters are restarted or the operation condition (e.g., temperature)
+						has changed significantly</li>
+					<li>by taking the difference between the current carrier phase estimates and the corrections, the transmitter-dependent
+						parameters eliminated</li>
+				</ul>
+			</section>
+
+			<section>
+				<strong>Experiment</strong>: system
+				<div class="row">
+					<img src="images/reference_clock_TGV_CD.png " style="height: 400px; margin: 0 auto 0.5rem auto; padding-top:1 rem; background: transparent;">
+				</div>
+				<h5>source: C. Diouf et. al.
+					<a href="https://d2k0ddhflgrk1i.cloudfront.net/CiTG/Over%20faculteit/Afdelingen/Geoscience%20%26%20Remote%20sensing/Research/IONGNSS2020_SuperGPS_CherifDiouf.pdf ">Demonstration of a decimeter-level accurate hybrid optical-wireless terrestrial positioning system </a>.
+				</h5>
+			</section>
+			<section>
+				<strong>Experiment</strong>: transmitters
+				<div class="container ">
+					<div class="row ">
+						<div class="col ">
+							<p>Tx antenna</p>
+							<img src="images/transmitter_setup.jpg " style="height: 280px; margin: 0 auto 0.5rem auto; background: transparent; ">
+						</div>
+						<div class="col ">
+							<p>Tx geometry</p>
+							<img src="images/Rx_Location_TGV.PNG " style="height: 280px; margin: 0 auto 0.5rem auto; background: transparent; ">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<strong>Experiment</strong>: receiver</h2>
+				<div class="container ">
+					<div class="row ">
+						<div class="col ">
+							<p>mounted on car</p>
+							<img src="images/receiver_car.PNG " style="height: 280px; margin: 0 auto 0.5rem auto; background: transparent; ">
+						</div>
+						<div class="col ">
+							<p>mounted on trolly</p>
+							<img src="images/receiver_trolley.PNG " style="height: 250px; margin: 0 auto 0.5rem auto; background: transparent; ">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<strong>Experiment</strong>: signal parameters
+				<div class="row ">
+					<div class="col ">
+						<img src="images/parameters.png ">
+					</div>
+					<div class="col ">
+						<img src="images/signal_parameters.png ">
+					</div>
+				</div>
+			</section>
+			<section>
+				<strong>Result</strong>: time-delay-based positioning
+				<div class="row">
+					<div class="col">
+						<img src="images/positioning_tde_1.png">
+						<h5 style="text-align: left">
+							<strong>Overall RMSE</strong>: 9.75 cm (East) 9.64 cm (North)</h5>
+					</div>
+					<div class="col">
+						<img src="images/positioning_tde_2.png">
+						<h5 style="text-align: left">
+							<strong>bias</strong> (due to multipath): decimeter to centimeter</h5>
+						<h5 style="text-align: left">
+							<strong>precision </strong>: less than 2 cm</h5>
+					</div>
+				</div>
+			</section>
+			<section>
+				<strong>Result</strong>: carrier-phase-based positioning
+				<div class="row">
+					<div class="col">
+						<img src="images/ch7_asyn_trolley_static_pnts.png " alt=" " style="height: 280px; margin: 0 auto 0.5rem auto; background: transparent;">
+					</div>
+					<div class="col">
+						<img src="images/carrier_phase_positioning_error.png" alt="" style="height: 280px; margin: 0 auto 0.5rem auto; background: transparent;">
+					</div>
+				</div>
+				<h5 style="text-align: left">
+					<strong>Overall RMSE:</strong>
+				</h5>
+				<h5 style="text-align: left">
+					<ul>
+						<li>ambiguity-float solution: 14.6 cm (East), 18.1 cm (North)</li>
+						<li>ambiguity-fixed solution (using correction): 1.7 cm (East), 2.7 cm (North)
+					</ul>
+				</h5>
+
+			</section>
+
+			<section>
+				<strong>Experiment</strong>: signal parameters
+				<h5> RMSE of position solution in East and North direction</h5>
+				<style type="text/css">
+					.tg {
+						border-collapse: collapse;
+						border-spacing: 0;
+					}
+
+					.tg td {
+						border-color: black;
+						border-style: solid;
+						border-width: 1px;
+						font-family: Arial, sans-serif;
+						font-size: 14px;
+						overflow: hidden;
+						padding: 10px 5px;
+						word-break: normal;
+					}
+
+					.tg th {
+						border-color: black;
+						border-style: solid;
+						border-width: 1px;
+						font-family: Arial, sans-serif;
+						font-size: 14px;
+						font-weight: normal;
+						overflow: hidden;
+						padding: 10px 5px;
+						word-break: normal;
+					}
+
+					.tg .tg-mn8v {
+						background-color: #9b9b9b;
+						border-color: inherit;
+						font-weight: bold;
+						text-align: center;
+						vertical-align: top
+					}
+
+					.tg .tg-34fe {
+						background-color: #c0c0c0;
+						border-color: inherit;
+						text-align: center;
+						vertical-align: top
+					}
+
+					.tg .tg-zlqz {
+						background-color: #c0c0c0;
+						border-color: inherit;
+						font-weight: bold;
+						text-align: center;
+						vertical-align: top
+					}
+
+					.tg .tg-c3ow {
+						border-color: inherit;
+						text-align: center;
+						vertical-align: top
+					}
+
+					.tg .tg-yt8j {
+						background-color: #c0c0c0;
+						border-color: inherit;
+						text-align: right;
+						vertical-align: top
+					}
+
+					.tg .tg-7btt {
+						border-color: inherit;
+						font-weight: bold;
+						text-align: center;
+						vertical-align: top
+					}
+
+					.tg .tg-dvpl {
+						border-color: inherit;
+						text-align: right;
+						vertical-align: top
+					}
+				</style>
+				<table class="tg">
+					<thead>
+						<tr>
+							<th class="tg-mn8v" colspan="2">run no.</th>
+							<th class="tg-mn8v">1</th>
+							<th class="tg-mn8v">2</th>
+							<th class="tg-mn8v">3</th>
+							<th class="tg-mn8v">4</th>
+							<th class="tg-mn8v">5</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="tg-zlqz" rowspan="2">relative
+								<br>positioning</td>
+							<td class="tg-zlqz">E</td>
+							<td class="tg-yt8j">1.5</td>
+							<td class="tg-yt8j">1.5</td>
+							<td class="tg-yt8j">1.4</td>
+							<td class="tg-yt8j">1.9</td>
+							<td class="tg-yt8j">1.5</td>
+						</tr>
+						<tr>
+							<td class="tg-zlqz">N</td>
+							<td class="tg-yt8j">3.2</td>
+							<td class="tg-yt8j">2.7</td>
+							<td class="tg-yt8j">2.2</td>
+							<td class="tg-yt8j">1.8</td>
+							<td class="tg-yt8j">3.0</td>
+						</tr>
+						<tr>
+							<td class="tg-zlqz" rowspan="2">
+								<br>PoA float</td>
+							<td class="tg-7btt">E</td>
+							<td class="tg-dvpl">14.6</td>
+							<td class="tg-dvpl">12.2</td>
+							<td class="tg-dvpl">2.9</td>
+							<td class="tg-dvpl">3.2</td>
+							<td class="tg-dvpl">6.9</td>
+						</tr>
+						<tr>
+							<td class="tg-7btt">N</td>
+							<td class="tg-dvpl">18.1</td>
+							<td class="tg-dvpl">14.8</td>
+							<td class="tg-dvpl">2.9</td>
+							<td class="tg-dvpl">4.2</td>
+							<td class="tg-dvpl">3.7</td>
+						</tr>
+						<tr>
+							<td class="tg-zlqz" rowspan="3">
+								<br>
+								<br>PoA fixed
+								<br>w/ corrections</td>
+							<td class="tg-zlqz">E</td>
+							<td class="tg-yt8j">1.7</td>
+							<td class="tg-yt8j">1.8</td>
+							<td class="tg-yt8j">1.3</td>
+							<td class="tg-yt8j">1.8</td>
+							<td class="tg-yt8j">2.4</td>
+						</tr>
+						<tr>
+							<td class="tg-zlqz">N</td>
+							<td class="tg-yt8j">2.7</td>
+							<td class="tg-yt8j">3.8</td>
+							<td class="tg-yt8j">2.8</td>
+							<td class="tg-yt8j">3.4</td>
+							<td class="tg-yt8j">3.2</td>
+						</tr>
+						<tr>
+							<td class="tg-34fe">n_fx/n_ft (%)</td>
+							<td class="tg-yt8j">92.4</td>
+							<td class="tg-yt8j">97.7</td>
+							<td class="tg-yt8j">100</td>
+							<td class="tg-yt8j">93.4</td>
+							<td class="tg-yt8j">87.7</td>
+						</tr>
+						<tr>
+							<td class="tg-zlqz" rowspan="3">
+								<br>
+								<br>PoA fixed
+								<br>w/o corrections</td>
+							<td class="tg-7btt">E</td>
+							<td class="tg-dvpl">33.9</td>
+							<td class="tg-dvpl">19.1</td>
+							<td class="tg-dvpl">6.9</td>
+							<td class="tg-dvpl">12.6</td>
+							<td class="tg-dvpl">8.8</td>
+						</tr>
+						<tr>
+							<td class="tg-7btt">N</td>
+							<td class="tg-dvpl">42.4</td>
+							<td class="tg-dvpl">15.0</td>
+							<td class="tg-dvpl">3.0</td>
+							<td class="tg-dvpl">7.1</td>
+							<td class="tg-dvpl">5.1</td>
+						</tr>
+						<tr>
+							<td class="tg-c3ow">n_fx/n_ft (%)</td>
+							<td class="tg-dvpl">23.8</td>
+							<td class="tg-dvpl">26.7</td>
+							<td class="tg-dvpl">90</td>
+							<td class="tg-dvpl">16.1</td>
+							<td class="tg-dvpl">51.6</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section>
+				<strong>Experimental result</strong>: sparse multiband signal
+				<img src="images/positioning_sparse_multiband_signal.png">
+			</section>
+
+			<section data-transition="slide " data-background="#dddddd " data-background-transition="zoom ">
+				<h3 style="padding-bottom: 3rem ">I would like to thank...</h3>
+				<div class="containter ">
+					<div class="row ">
+						<div class="col-4 ">
+							<img src="./images/CT.png " alt="reveal.js logo " style="height: 250px; margin: 0 auto 0.5rem auto; background:transparent;">
+							<h4>Christian Tiberius</h4>
+						</div>
+						<div class="col-4 ">
+							<img src="./images/GJ.png " alt="reveal.js logo " style="height: 250px; margin: 0 auto 0.5rem auto; background:
+						 transparent " ;>
+							<h4>Gerard Janssen</h4>
+						</div>
+						<div class="col-4 ">
+							<img src="./images/CD.png " alt="reveal.js logo " style="height: 250px; margin: 0 auto 0.5rem auto; background:
+						 transparent " ;>
+							<h4>Cherif Diouf</h4>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section data-transition="slide " data-background="#dddddd ">
+				<h3 style="padding-bottom: 3rem "> also thank the following institues</h3>
+				<div class="container ">
+					<div class="row ">
+						<div class="col ">
+							<img src="./images/NWO-logo-RGB.jpg " style="height: 150px; margin: 0 auto 0.5rem auto; ">
+						</div>
+						<div class=" col ">
+							<img src="./images/VSL.png " alt=" " style="height: 150px; margin: 0 auto 0.5rem auto; ">
+						</div>
+						<div class="col ">
+							<img src="./images/SURF.png " alt=" ">
+						</div>
+						<div class="col ">
+							<img src="./images/OPNT.png " alt=" ">
+						</div>
+						<div class="row ">
+							<div class="col ">
+								<img src="./images/ICT.png " style="height: 150px; margin: 0 auto 0.5rem auto; ">
+							</div>
+							<div class=" col ">
+								<img src="./images/TGV.png " alt=" ">
+							</div>
+							<div class="col ">
+								<img src="./images/AT.png " alt=" ">
+							</div>
+							<div class="col ">
+								<img src="./images/VU.png " alt=" ">
+							</div>
+						</div>
+					</div>
+			</section>
+			<section data-transition="slide " data-background="#f8f8f8 " data-background-transition="zoom " style="text-align: left; ">
+				<h1>THE END</h1>
+				<p>
+					Question? contact me via h.dun@tudelft.nl
+					<hr> More information about SuperGPS? please click
+					<a href="https://www.tudelft.nl/citg/over-faculteit/afdelingen/geoscience-remote-sensing/research/projects/supergps/ ">here</a>
+				</p>
+			</section>
+
+			</div>
+
+		</div>
+
+		<script src=" dist/reveal.js "></script>
+		<script src="plugin/zoom/zoom.js "></script>
+		<script src="plugin/notes/notes.js "></script>
+		<script src="plugin/search/search.js "></script>
+		<script src="plugin/markdown/markdown.js "></script>
+		<script src="plugin/highlight/highlight.js "></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				math: {
+					mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+					config: 'TeX-AMS_HTML-full',
+					// pass other options into `MathJax.Hub.Config()`
+					TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				plugins: [RevealMath]
+			});
+		</script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+			});
+
+		</script>
+
 </body>
 
 </html>
