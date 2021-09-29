@@ -109,7 +109,7 @@
 					</li>
 					<li class="fragment">
 						<h4>How can integer nature of carrier phase cycle ambiguities be retrieved, so that the ambiguity-fixed solution can be
-							obtained.
+							obtained?
 						</h4>
 					</li>
 					<li class="fragment">
@@ -117,7 +117,7 @@
 					</li>
 				</ul>
 			</section>
-
+			<section>How can a ranging singal be designed by occupying little spectral resources, but provides high ranging accuracy?</section>
 			<section>
 				<div style="padding-bottom: 0.5rem;">
 					<strong>Signal bandwidth and ranging accuracy</strong>
@@ -133,17 +133,46 @@
 						</div>
 					</div>
 					<h5> ranging precision is justified by Cramer-Rao lower bound (CRLB)</h5>
-					<h4 class="fragment">large signal bandwidth = high ranging accuracy</h4>
+					<h4 class="fragment">
+						<strong>large</strong> signal bandwidth =
+						<strong>high</strong> ranging accuracy</h4>
 				</div>
 			</section>
 
 			<section>
 				<strong>Signal bandwidth and ranging precision</strong>
-				<img src="images/crlb_virutal_signal_bandwidth.png" style="height: 380px; margin: 0 auto 0.5rem auto; background: transparent;">
+				<img src="images/crlb_virutal_signal_bandwidth.png" style="height: 400px; margin: 0 auto 0.5rem auto; background: transparent;">
 				<h5>
 					<strong>virtual</strong> signal bandwidth: bandwidth between two signal bands at the edges.</h5>
-				<h4 class="fragment">large
-					<strong> virtual </strong> signal bandwidth = high ranging precision</h4>
+				<h4 class="fragment">
+					<strong> large virtual </strong> signal bandwidth =
+					<strong>high</strong> ranging precision</h4>
+			</section>
+			<section>How can carrier phase be estimated from periodically transmitted ranging signal from an asynchronized receiver?</section>
+			<section>
+				<strong>Ambiguious carrier phase measurement</strong>
+				<div class="row">
+					<img src="images/wrapped_carrier_phase.PNG" style="height:380px; margin: 0 auto 0.5rem auto; background: transparent;">
+				</div>
+				<div class="row">
+					<ul>
+						<li class="fragment">
+							<h4>range from -$\pi$ to $\pi$</h4>
+						</li>
+						<li class="fragment">
+							<h4>too many carrier phase cycle ambiguities</h4>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<strong>Carrier phase tracking</strong>
+				<img src="images/unwrapped_carrier_phase_1.PNG" style="height:380px; margin: 0 auto 0.5rem auto; background: transparent;">
+				<ul>
+					<li>
+						<h4>only the initial carrier phase cycle ambiguities are kept unknown</h4>
+					</li>
+				</ul>
 			</section>
 			<section>
 				<div>
@@ -163,29 +192,56 @@
 					</div>
 				</div>
 			</section>
-
 			<section>
-				<strong>Carrier phase cycle ambiguity</strong>
+				<h4>
+					<span class="fragment">However, </span>
+					<span class="fragment">carrier phase cycle ambiguities are generally treated as
+						<strong>real-valued float</strong> value...
+					</span>
+				</h4>
+				<h4>
+					<span class="fragment">due to transmitter-dependent parameters (e.g., carrier phase offset, hardware delay, etc.)</span>
+				</h4>
+			</section>
+			<section>How can integer nature of carrier phase cycle ambiguities be retrieved, so that the ambiguity-fixed solution can be obtained?
+			</section>
+			<section>
+				<div style="margin-bottom: 2rem" ;>
+					<strong>Retrieve Integer Nature of ambiguity</strong>
+				</div>
+				<h4>single snapshot measurements set taken from all transmitters</h4>
 				<ul>
-					<li>single snapshot measurements set taken from all transmitters</li>
-					<li>not need to be updated in real-time, unless the transmitters are restarted or the operation condition (e.g., temperature)
-						has changed significantly</li>
-					<li>by taking the difference between the current carrier phase estimates and the corrections, the transmitter-dependent
-						parameters eliminated</li>
+					<li>
+						<h4>they do not need to be updated in real-time, unless the transmitters are restarted or the operation condition (e.g.,
+							temperature) has changed significantly</h4>
+					</li>
 				</ul>
 			</section>
-
 			<section>
-				<strong>Experiment</strong>: system
+				<div style="margin-bottom: 2rem" ;>
+					<strong>Retrieve Integer Nature of ambiguity</strong>
+				</div>
+				<h4>by taking the
+					<strong>difference</strong> between the current carrier phase estimates and the corrections, the transmitter-dependent parameters
+					eliminated
+				</h4>
+			</section>
+
+			<section>What is the positioning accuraccy that prototype system can provide?</section>
+			<section>
+				<div style="margin-bottom: 2rem" ;>
+					<strong>Experiment</strong>: system
+				</div>
 				<div class="row">
-					<img src="images/reference_clock_TGV_CD.png " style="height: auto; margin: 0 auto 0.5rem auto; padding-top:1 rem; background: transparent;">
+					<img src="images/reference_clock_TGV_CD.png " style="height: 380; margin: 0 auto 0.5rem auto; padding-top:1 rem; background: transparent;">
 				</div>
 				<h5>source: C. Diouf et. al.
 					<a href="https://d2k0ddhflgrk1i.cloudfront.net/CiTG/Over%20faculteit/Afdelingen/Geoscience%20%26%20Remote%20sensing/Research/IONGNSS2020_SuperGPS_CherifDiouf.pdf ">Demonstration of a decimeter-level accurate hybrid optical-wireless terrestrial positioning system </a>.
 				</h5>
 			</section>
 			<section>
-				<strong>Experiment</strong>: transmitters
+				<div style="margin-bottom: 2rem" ;>
+					<strong>Experiment</strong>: transmitters</div>
 				<div class="container ">
 					<div class="row ">
 						<div class="col ">
@@ -200,22 +256,25 @@
 				</div>
 			</section>
 			<section>
-				<strong>Experiment</strong>: receiver</h2>
+				<div style="margin-bottom: 2rem" ;>
+					<strong>Experiment</strong>: receiver</div>
 				<div class="container ">
 					<div class="row ">
 						<div class="col ">
-							<p>mounted on car</p>
+							<h4>mounted on car</h4>
 							<img src="images/receiver_car.PNG " style="height: 280px; margin: 0 auto 0.5rem auto; background: transparent; ">
 						</div>
 						<div class="col ">
-							<p>mounted on trolly</p>
+							<h4>mounted on trolly</h4>
 							<img src="images/receiver_trolley.PNG " style="height: 250px; margin: 0 auto 0.5rem auto; background: transparent; ">
 						</div>
 					</div>
 				</div>
 			</section>
 			<section>
-				<strong>Experiment</strong>: signal parameters
+				<div style="margin-bottom: 2rem">
+					<strong>Experiment</strong>: signal parameters
+				</div>
 				<div class="row ">
 					<div class="col ">
 						<img src="images/parameters.png ">
@@ -226,24 +285,39 @@
 				</div>
 			</section>
 			<section>
-				<strong>Result</strong>: time-delay-based positioning
+				<strong>Results</strong>: time-delay-based positioning
 				<div class="row">
 					<div class="col">
 						<img src="images/positioning_tde_1.png">
-						<h5 style="text-align: left">
-							<strong>Overall RMSE</strong>: 9.75 cm (East) 9.64 cm (North)</h5>
-					</div>
-					<div class="col">
-						<img src="images/positioning_tde_2.png">
-						<h5 style="text-align: left">
-							<strong>bias</strong> (due to multipath): decimeter to centimeter</h5>
-						<h5 style="text-align: left">
-							<strong>precision </strong>: less than 2 cm</h5>
+						<h4 style="text-align: center">
+							<strong>Overall RMSE</strong>: 9.75 cm (East), 9.64 cm (North)</h4>
 					</div>
 				</div>
 			</section>
 			<section>
-				<strong>Result</strong>: carrier-phase-based positioning
+				<div style="margin-bottom: 1rem">
+					<strong>Results</strong>: time-delay-based positioning
+				</div>
+				<div class="row">
+					<div class="col">
+						<img src="images/positioning_tde_2.png">
+						<h4 style="text-align: left">
+							<strong>bias</strong> (due to multipath): less than 1 dm</h4>
+						<h4 style="text-align: left">
+							<strong>precision </strong>: better than 2 cm</h4>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div style="margin-bottom: 2rem">
+					<strong>Results</strong>: time-delay-based positioning
+				</div>
+				sparse multiband signal
+				<img src="images/positioning_sparse_multiband_signal.png">
+			</section>
+			<section>
+				<div style="margin-bottom: 2rem">
+					<strong>Results</strong>: carrier-phase-based positioning</div>
 				<div class="row">
 					<div class="col">
 						<img src="images/ch7_asyn_trolley_static_pnts.png " alt=" " style="height: 280px; margin: 0 auto 0.5rem auto; background: transparent;">
@@ -252,21 +326,21 @@
 						<img src="images/carrier_phase_positioning_error.png" alt="" style="height: 280px; margin: 0 auto 0.5rem auto; background: transparent;">
 					</div>
 				</div>
-				<h5 style="text-align: left">
+				<h4 style="text-align: left" ;>
 					<strong>Overall RMSE:</strong>
-				</h5>
-				<h5 style="text-align: left">
+				</h4>
+				<h4 style="text-align: left" ;>
 					<ul>
 						<li>ambiguity-float solution: 14.6 cm (East), 18.1 cm (North)</li>
 						<li>ambiguity-fixed solution (using correction): 1.7 cm (East), 2.7 cm (North)
 					</ul>
-				</h5>
-
+				</h4>
 			</section>
 
 			<section>
-				<strong>Experiment</strong>: signal parameters
-				<h5> RMSE of position solution in East and North direction</h5>
+				<div style="margin-bottom: 2rem" ;>
+					<strong>Results</strong>: carrier-phase-based positioning</div>
+				<h4> RMSE of position solution in East and North direction</h4>
 				<style type="text/css">
 					.tg {
 						border-collapse: collapse;
@@ -451,11 +525,16 @@
 						</tr>
 					</tbody>
 				</table>
+				<h4 class="fragment">Using corrections, we can obtain ambiguity-fixed solutions for most of the epochs </h4>
 			</section>
-
 			<section>
-				<strong>Experimental result</strong>: sparse multiband signal
-				<img src="images/positioning_sparse_multiband_signal.png">
+				<h2>That's all for now...</h2>
+			</section>
+			<section>
+				<h2>More details?</h2>
+				<h3>You can download my thesis from
+					<a href="https://doi.org/10.4233/uuid:98a7f072-7423-4a23-ac9b-8b88540c260d">here</a>
+				</h3>
 			</section>
 
 			<section data-transition="slide " data-background="#dddddd " data-background-transition="zoom ">
@@ -479,6 +558,11 @@
 					</div>
 				</div>
 			</section>
+			<section data-transition="slide " data-background="#dddddd ">
+				<h3 style="padding-bottom: 0rem ">and colleagues from GRS...</h3>
+				<img src="images/grs.png">
+			</section>
+
 			<section data-transition="slide " data-background="#dddddd ">
 				<h3 style="padding-bottom: 3rem "> also thank the following institues</h3>
 				<div class="container ">
